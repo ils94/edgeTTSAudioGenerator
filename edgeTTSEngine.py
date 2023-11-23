@@ -6,7 +6,7 @@ async def engine(text, voice, filename) -> None:
     if not text == "":
         try:
             communicate = edge_tts.Communicate(text, voice)
-            await communicate.save(f"{filename}.mp3")
+            await communicate.save(f"{filename}")
             messagebox.showinfo("Success", f"The audio file {filename} was generated!")
         except Exception as e:
             messagebox.showerror("Error", f"{str(e)}")
